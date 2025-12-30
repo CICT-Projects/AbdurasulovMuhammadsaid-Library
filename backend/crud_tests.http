@@ -1,0 +1,143 @@
+﻿### CRUD API Tests for Books & Authors
+
+# ============================================
+# AUTHORS ENDPOINTS
+# ============================================
+
+### Create Author
+POST http://localhost:5148/api/authors
+Content-Type: application/json
+
+{
+  "name": "Лев Толстой",
+  "country": "Россия"
+}
+
+### Create Second Author
+POST http://localhost:5148/api/authors
+Content-Type: application/json
+
+{
+  "name": "Федор Достоевский",
+  "country": "Россия"
+}
+
+### Get All Authors
+GET http://localhost:5148/api/authors
+
+### Get Author by ID
+GET http://localhost:5148/api/authors/1
+
+### Update Author
+PUT http://localhost:5148/api/authors/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Лев Николаевич Толстой",
+  "country": "Российская Империя"
+}
+
+### Delete Author
+DELETE http://localhost:5148/api/authors/1
+
+# ============================================
+# BOOKS ENDPOINTS
+# ============================================
+
+### Create Book
+POST http://localhost:5148/api/books
+Content-Type: application/json
+
+{
+  "title": "Война и мир",
+  "year": 1869,
+  "authorId": 1
+}
+
+### Create Second Book
+POST http://localhost:5148/api/books
+Content-Type: application/json
+
+{
+  "title": "Преступление и наказание",
+  "year": 1866,
+  "authorId": 2
+}
+
+### Get All Books
+GET http://localhost:5148/api/books
+
+### Get Book by ID
+GET http://localhost:5148/api/books/1
+
+### Update Book
+PUT http://localhost:5148/api/books/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Война и мир (издание 2025)",
+  "year": 1869,
+  "authorId": 1
+}
+
+### Delete Book
+DELETE http://localhost:5148/api/books/1
+
+# ============================================
+# WORKFLOW EXAMPLES
+# ============================================
+
+### Workflow 1: Add Author with Books
+# Step 1: Create author
+POST http://localhost:5148/api/authors
+Content-Type: application/json
+
+{
+  "name": "Иван Тургенев",
+  "country": "Россия"
+}
+
+# Step 2: Create book 1
+POST http://localhost:5148/api/books
+Content-Type: application/json
+
+{
+  "title": "Отцы и дети",
+  "year": 1862,
+  "authorId": 3
+}
+
+# Step 3: Create book 2
+POST http://localhost:5148/api/books
+Content-Type: application/json
+
+{
+  "title": "Рудин",
+  "year": 1856,
+  "authorId": 3
+}
+
+### Workflow 2: Update Author and Book
+# Update author
+PUT http://localhost:5148/api/authors/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "Иван Сергеевич Тургенев",
+  "country": "Франция"
+}
+
+# Update book
+PUT http://localhost:5148/api/books/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "Отцы и дети (новое издание)",
+  "year": 1862,
+  "authorId": 3
+}
+

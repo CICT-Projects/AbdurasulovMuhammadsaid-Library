@@ -1,0 +1,74 @@
+﻿### GET Books
+GET http://localhost:5000/api/books
+
+###
+
+### GET Book by ID
+GET http://localhost:5000/api/books/1
+
+###
+
+### POST Create Book
+POST http://localhost:5000/api/books
+Content-Type: application/json
+
+{
+  "title": "Война и мир",
+  "year": 1869
+}
+
+###
+
+### POST Create another Book
+POST http://localhost:5000/api/books
+Content-Type: application/json
+
+{
+  "title": "Преступление и наказание",
+  "year": 1866
+}
+
+###
+
+### DELETE Book
+DELETE http://localhost:5000/api/books/1
+
+###
+
+### GET Authors
+GET http://localhost:5000/api/authors
+
+###
+
+### GET Author by ID
+GET http://localhost:5000/api/authors/1
+
+###
+
+### POST Create Author
+POST http://localhost:5000/api/authors
+Content-Type: application/json
+
+{
+  "name": "Лев Толстой",
+  "country": "Россия"
+}
+
+###
+
+### POST Create another Author
+POST http://localhost:5000/api/authors
+Content-Type: application/json
+
+{
+  "name": "Федор Достоевский",
+  "country": "Россия"
+}
+
+###
+
+### DELETE Author
+DELETE http://localhost:5000/api/authors/1
+
+###
+
