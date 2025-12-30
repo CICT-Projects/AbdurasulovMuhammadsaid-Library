@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Books from './Books';
 import Authors from './Authors';
+import AuthorDetail from './AuthorDetail';
+import BookDetail from './BookDetail';
 import './App.css';
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
 
         <main className="content">
           <Routes>
+            <Route path="/books/:id" element={<BookDetail />} />
+            <Route path="/authors/:id" element={<AuthorDetail />} />
             <Route path="/books" element={<Books />} />
             <Route path="/authors" element={<Authors />} />
             <Route path="/" element={<Books />} />

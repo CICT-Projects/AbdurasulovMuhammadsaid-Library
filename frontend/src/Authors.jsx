@@ -1,4 +1,5 @@
-﻿﻿﻿import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const API_BASE_URL = 'http://localhost:5148/api';
 
@@ -144,7 +145,7 @@ export default function Authors() {
               {authors.map((author) => (
                 <li key={author.id} className={editingId === author.id ? 'editing' : ''}>
                   <span>
-                    <strong>{author.name}</strong> из {author.country}
+                    <strong><Link to={`/authors/${author.id}`}>{author.name}</Link></strong> из {author.country}
                   </span>
                   <div className="author-actions">
                     <button
@@ -169,4 +170,3 @@ export default function Authors() {
     </div>
   );
 }
-

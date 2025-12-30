@@ -1,4 +1,5 @@
-﻿﻿﻿﻿import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const API_BASE_URL = 'http://localhost:5148/api';
 
@@ -149,7 +150,7 @@ export default function Books() {
               {books.map((book) => (
                 <li key={book.id} className={editingId === book.id ? 'editing' : ''}>
                   <span>
-                    <strong>{book.title}</strong> ({book.year})
+                    <strong><Link to={`/books/${book.id}`}>{book.title}</Link></strong> ({book.year})
                   </span>
                   <div className="book-actions">
                     <button
@@ -174,4 +175,3 @@ export default function Books() {
     </div>
   );
 }
-
